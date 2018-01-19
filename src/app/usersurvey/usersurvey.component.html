@@ -1,0 +1,31 @@
+<div class="app-loader" *ngIf="!display">
+    <app-spinloader></app-spinloader>
+</div>
+<div class="survey">
+<div class="survey-nav">
+    <div class="username">
+        {{userdata.firstname}}{{userdata.lastname}}
+    </div>
+    <div class="survey-title">
+        <div class="title">
+            {{title}}
+        </div>
+    </div>
+    <div class="links">
+        <ul>
+            <li><a routerLink="results" [routerLinkActiveOptions]="{exact: true }"  routerLinkActive="active"><i class="fa fa-bar-chart" aria-hidden="true"></i>results</a></li>
+            <li><a routerLink="questions"  routerLinkActive="active"><i class="fa fa-tasks" aria-hidden="true"></i>questions</a></li>
+            <li><a routerLink="edit"  routerLinkActive="active"><i class="fa fa-cog" aria-hidden="true"></i>edit</a></li>
+            <li><a routerLink="info"  routerLinkActive="active"><i class="fa fa-info-circle" aria-hidden="true"></i>info</a></li>
+        </ul>
+    </div>
+</div>
+<div class="survey-router">
+    <div class="user-header">
+        <a routerLink='/profile'>Home</a>
+    </div>
+    <div class="router">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+</div>

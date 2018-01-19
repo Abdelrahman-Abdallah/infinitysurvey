@@ -1,0 +1,94 @@
+
+<div class="container" >
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+
+
+      <form  #f="ngForm">
+          <!-- (ngSubmit)='onSubmit(f)' -->
+        <!-- <pre>
+        {{f.value|json}}
+      </pre> -->
+      <div class="row content">
+        <div class="col-xs-12" *ngFor='let question of questions.questions;let i =index'>
+          <div class="question-container">
+            <div class="question-number col-xs-1">
+              
+            </div>
+            <div class="question-body col-xs-11">
+                <div id="{{question._id}}" class="question" 
+                [ngClass]="(question._id== targetId )?'targetClass' : 'anyThingElse' " 
+                *ngIf="question.type == 'radio'" 
+                ngModelGroup='radio'>
+                    <div class="title">
+                      <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                      {{question.question}}
+                    </div>
+                    <div class="answers">
+                      <div class="answer radio radio-info" *ngFor="let answer of question.answers">
+                          
+                        <!--  <label><input type="radio" [name]="'answer'" [value]='answer._id' ngModel required>{{answer.answer}}</label> -->
+                        <input type="radio"  id="{{answer._id}}" name='{{question._id}}' [value]='answer._id' ngModel required checked>
+                        <label for="{{answer._id}}" >{{answer.answer}}</label>
+                      </div>
+                    </div>
+                </div>
+                <div  id="{{question._id}}" class="question" 
+                [ngClass]="(question._id== targetId )?'targetClass' : 'anyThingElse' " 
+                *ngIf="question.type == 'checkbox'" ngModelGroup='checkbox'>
+                  <!-- ngModelGroup='{{i}}' -->
+                    <div class="title">
+                      
+                        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                        
+                        {{question.question}}
+                      </div>
+                      <div class="answers">
+                        <div class="answer checkbox checkbox-primary" *ngFor="let answer of question.answers">
+                          <input type="checkbox" id='{{answer._id}}' name='{{question._id}}+{{answer._id}}' [value]='answer._id' ngModel>
+                          <label for="{{answer._id}}">{{answer.answer}}</label>
+                        </div>
+                      </div>
+                      <!-- <button (click)="testBut(u)" type="button">click</button> -->
+
+                </div>
+                <div id="{{question._id}}" class="question" *ngIf="question.type == 'textarea'" ngModelGroup='textarea'>
+                  <div class="title">
+                    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                    {{question.question}}
+                  </div>
+                  <div class="answers">
+                    <div class="answer">
+                      <textarea class="textArea" name="{{question._id}}" id="" cols="100" rows="7" ngModel required></textarea>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              
+          </div>
+            
+        </div>
+      </div>
+      <div class="question-container">
+        <div class="question-body">
+          <div class="question">
+            
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <div [hidden]="!hiddenSubmit">
+          <div class="title"> <h3>Are You sure about Ur choices ? ? </h3></div>
+          <button type="button" class="btn btn-primary" (click)="checkFormValid(f)">yes</button>
+          <button type="button" class="btn btn-danger"(click)="noFunc()">no</button>
+        </div>
+        <div [hidden]="errShow" style="width:100%; height:100%;color:red; text-align:center;font-size:20px; margin:auto;border:1px red solid;padding:10px; margin:10px auto;" class="text-danger">
+          please make sure about ur choices
+        </div>
+      </div>
+        </form>
+       
+      this the ID <pre>{{arrayOfChoosenId|json}}</pre>
+    </div>
+  </div>
+</div>

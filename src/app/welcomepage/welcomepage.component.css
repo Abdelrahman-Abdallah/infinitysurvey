@@ -1,0 +1,81 @@
+.welcome{
+    width: 100%;
+    height: 600px;
+    background-color: rgba(155, 125, 125, 0.5);
+}
+.quote{
+    margin: 0 auto;
+    text-align: center;
+    padding-top:250px;
+}
+h4.quote{
+    color: rgb(58, 48, 48);
+    font-size: 35px;
+    font-family: cursive;
+}
+
+
+.header {
+    color:white;
+    height: 95vh;
+    position: relative;
+    background-image: linear-gradient(to right bottom, rgba(69, 117, 226, 0.8), rgba(79, 119, 179, 0.48)),url('../../assets/images/header.jpg');
+    clip-path: polygon(0% 0%,100% 0%,100% 88%, 50% 100%, 0% 88%);
+    background-size: cover;
+    background-position: top;
+}
+.header .header-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+.padding{
+    padding: 5px;
+}
+.header .primary-heading-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+.header .primary-heading-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1.15rem;
+    -webkit-animation: moveInRight 1s ease-out;
+    animation: moveInRight 1s ease-out;
+    text-transform: uppercase
+}
+.btn-signup {
+    margin-top: 5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #777;
+    margin-left: 20px;
+}
+.btn-signup:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.login {
+    padding: 1.5rem 6rem;
+}

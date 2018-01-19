@@ -1,0 +1,25 @@
+.edit {
+    width: 70%;
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+hr {
+    color: #12cfda;
+    display: block;
+    border:1px solid;
+}
+.danger {
+    color: rgb(247, 128, 128);
+}
+form .header h3{
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.edit .change-data {
+    
+    padding: 10px;
+    margin: auto
+}

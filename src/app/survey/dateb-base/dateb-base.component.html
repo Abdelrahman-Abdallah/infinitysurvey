@@ -1,0 +1,79 @@
+<div class="backdrop" *ngIf='display'></div>
+<div class="area" *ngIf='display'>
+  <div class="content">
+    <form [formGroup]="durationForm" (ngSubmit)='submit()'>
+      <div class="row">
+        <div class="col-xs-12 closeButton">
+            <span class="icon2 btn10" (click)="close()">
+                <i class="fa fa-close"  aria-hidden="true"></i>
+               </span>
+        </div>
+    <div class="contai">
+    <div class="col-xs-12">
+      
+
+           <h5> How many days you want your survey active?</h5>
+    </div>
+    <div class="col-xs-3" style="margin-bottom:30px;">
+        <input 
+        type="number" 
+        class="form-control" 
+        style="width:100px" 
+        formControlName="duration"
+        min="0"
+        > 
+      
+    </div>
+    <span class="col-xs-2" style="color:red;padding-top:5px;">(required)</span>
+  </div> 
+    
+    <div class="contai">
+    <div class="col-xs-12">
+        <h5>Upload Only one Excel file contains who can apply this Survey</h5> 
+        
+      </div>
+      <div style="width:20%">
+      <label class="fileContainer btn">
+          Upload file 
+          
+          <input class="" type="file" (change)="onFileChange($event)" multiple="false" />
+          
+      </label>
+    </div>
+    <div class="inputField col-xs-9" style="width:63%;">
+     <span class="fileName" *ngIf='fileName' >{{fileName}}</span>
+         <span class="fileName2" *ngIf="danger">
+            {{fileNameWarning}}
+          </span>
+          
+    </div>
+    <span class="optional">
+        (Optional)
+      </span>
+    </div>
+    
+   
+      <!-- <button type="button" (click)="test()">Upload</button> -->
+      <!-- <pre>
+        {{data|json}}
+      </pre> -->
+      <div class="col-xs-12">
+      <button class =' btn submitButton' type="submit"   [disabled]="!durationForm.valid">Submit</button>
+    </div>
+    </div>
+    </form>
+    <h4>Final Array</h4>
+    <pre>
+      {{finalArray|json}}
+    </pre>
+  </div>
+  <!-- <table class="sjs-table">
+    <tr *ngFor="let row of data">
+      <td *ngFor="let val of row">
+        {{val}}
+      </td>
+    </tr>
+  </table> -->
+  
+  
+</div>

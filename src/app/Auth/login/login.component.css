@@ -1,0 +1,148 @@
+.container {
+    padding: 30px;
+}
+.logo{
+	margin-left:200px;
+}
+/* input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+	margin-left:220px;
+} */
+
+.login {
+    width: 80%;
+    margin: 0 auto;
+    background: #FFF;
+    border: 1px solid #DDD;
+    padding: 5rem 1rem;
+}
+.login .logo {
+    margin: 0;
+}
+.login .logo svg{
+    height:150px;
+    fill:transparent;
+    display: block;
+    margin:0 auto;
+    stroke:#6e6e92;
+    stroke-width: 4px;
+}
+.login .logo svg .path {
+    height:150px;
+}
+
+.login .logo h4 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.login .loginheader h3 {
+    text-align: center;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.login form {
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.login form i {
+    margin-right: 2px;
+    font-size: 20px;
+}
+.login form .form__group {
+    margin-bottom: 1rem;
+}
+.login form .form__input{
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rbga(255,255,255, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: inline-block;
+    transition: all .3s;
+    border:1px solid #DDD;
+    box-sizing: content-box;
+}
+.login form .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(51,51,51, .1);
+    border-bottom: 3px solid rgba(92, 92, 153, 0.727);
+}
+.login form .form__input:valid{
+    border-bottom: 3px solid green;
+}
+.login form .form__input.ng-invalid.ng-touched {
+    border-bottom: 3px solid orangered;
+}
+.login form .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+.login form button {
+    width: 40%;
+    display: block;
+    margin:0 auto;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.1rem;
+    border:none;
+    text-transform: uppercase;
+    background-color: #0aa8d4;
+    color: #FFF;
+    transition: all .1s ease-in-out;
+}
+.login form button:disabled,
+.login form button[disabled] {
+    background-color: #DDD;
+    cursor: default;
+}
+.login form button:not(:disabled):hover {
+    box-shadow: 0px 3px 1px 0px rgba(51,51,51,.6);;
+}
+.login form button:not(:disabled):focus {
+    box-shadow: 0px 3px 3px 0px rgba(51,51,51,.6);
+}
+.login .err  h4{
+    text-align: center;
+    font-size: 1.8rem;
+    color: rgb(235, 83, 83);
+    text-transform: capitalize;
+}
+@media only screen and (max-width: 768px) {
+.login {
+    width: 98%;
+}
+.login form {
+    width: 90%;
+}
+}

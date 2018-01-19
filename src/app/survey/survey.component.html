@@ -1,0 +1,288 @@
+
+ 
+ <div class="survey">
+   <div class="sidenav" id='navbar'>
+      <div class="qestTypeHeader">
+              Choose Question Type
+            </div>
+       <ul>
+       
+      <li (click)='showRadio()'>
+        <div class="icon">
+            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+        </div>
+        <span>Single Choice</span>
+      </li>
+      <li (click)='showCheckbox()'>
+        <div class="icon">
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        </div>
+        <span>Multiple Choices</span>
+      </li>
+      <li (click)='showTextArea()'>
+        <div class="icon">
+            <i class="fa fa-text-height" aria-hidden="true"></i>
+        </div>
+        <span>Essay</span>
+      </li>
+     
+      
+      </ul>
+      <button type="button" class="btn btn-success next-btn" *ngIf="nextButton" (click)='showDataBaseProcessing()'>Next</button>
+   </div>
+   <div class="survey-content" id='surveycontent'>
+     <div class="container-fluid">
+       
+       <div class="row">
+         <div class="col-md-12 col-xs-12">
+            <!-- <div class="col-xs-12">
+              <span id="toggle"><i class="fa fa-bars" aria-hidden="true"></i></span> this is the header
+
+            </div> -->
+            <div class="noQuestions" *ngIf="Questions.length == 0">
+                No Questions added Yet
+              </div>
+            <div class="col-xs-12">
+              <div class="question-container" *ngFor='let question of Questions;let i = index'>
+               
+                  <div class="col-xs-1 qnum">
+                      <!-- {{i+1}} -->
+                      <div class="question-number">
+                          <div class="number">
+                            Q.{{i+1}}
+                          </div>
+                        </div>
+                  </div>
+                    <div class="col-xs-10 question" *ngIf='question.type && question.type=="textarea"'>
+                        <div class="question-content col-xs-10">
+                          <div class="title col-xs-12">
+                              <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                            {{question.question}}
+                          </div>
+                          <div class="answers col-xs-12">
+                          <div class="answers-container">
+                          <div class="answer col-xs-12">
+                                <textarea id="" class ='form-control'
+                                 style="height: 150px;margin:10px auto; border: 1px solid rgb(207, 195, 195); resize:none"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                        </div>
+                        <div class="question-control col-xs-2">
+                            <div class="controls">
+                                <ul >
+                                  <li class="icon2" *ngIf="i>0" (click)="questionUp(i)">
+                                    
+                                      <i class="fa fa-level-up"  aria-hidden="true"></i>
+                                  
+                                  </li>
+                                  <div *ngIf="  Questions.length-1 > i">
+                                   
+                                      
+                                  <li class="icon2"   (click)="questionDown(i)">
+                                    
+                                      <i class="fa fa-level-down"  aria-hidden="true"></i>
+                                  
+                                  </li>
+                                      </div>
+                                
+                                  <li class="icon2"  (click)="removeQuestion(i)">
+                                    
+                                      <i class="fa fa-trash" aria-hidden="true"></i>
+                                  
+                                  </li>
+                                  <li class="icon2" (click)="editTextareaQuestion(i)">
+                                    
+                                      <i class="fa fa-edit" aria-hidden="true"></i>
+                                  
+                                  </li>
+                                </ul>
+                                  <!-- <button type="button" class="btn btn-danger" (click)="removeQuestion(i)">Remove Question</button>
+                                  <button type="button" class="btn btn-primary" (click)="questionUp(i)">Up Question</button>
+                                  <li (click)="questionUp(i)">
+                                    <div class="icon">
+                                        <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                    </div>
+                                    <span>up</span>
+                                  </li>
+                                  <button type="button" class="btn btn-primary" (click)="questionDown(i)">Down Question</button>
+                                  <button type="button" class="btn btn-default" (click)="editRadioQuestion(i)">Edit Question</button> -->
+                                </div>
+                        </div>
+                    </div>
+        <!-- statr Radio container display -->
+             
+              
+        <div class="col-xs-10 question" *ngIf='question.type && question.type=="radio"'>
+            
+            <div class="question-content col-xs-10">
+              <div class="title col-xs-12">
+                  <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                {{question.question}}
+              </div>
+              <div class="answers col-xs-12">
+                <div class="answers-container" *ngFor='let t of question.answers;let q = index'>
+
+                      <div class="answer radio radio-info">
+                          <input id="{{question.question}} {{q}}{{i}}" name="{{question.question}}{{i}}" type="radio" [checked]="q==0">
+                          <label  for="{{question.question}} {{q}}{{i}}" ><span class="radio-text">{{question.answers[q].answer}}</span></label>
+                        </div>
+                     
+                  </div>
+              </div>
+            </div>
+            <div class="question-control col-xs-2">
+                <div class="controls">
+                    <ul >
+                      <li class="icon2" *ngIf="i>0" (click)="questionUp(i)">
+                        
+                          <i class="fa fa-level-up"  aria-hidden="true"></i>
+                      
+                      </li>
+                      <div *ngIf="  Questions.length-1 > i">
+                       
+                          
+                      <li class="icon2"   (click)="questionDown(i)">
+                        
+                          <i class="fa fa-level-down"  aria-hidden="true"></i>
+                      
+                      </li>
+                          </div>
+                    
+                      <li class="icon2"  (click)="removeQuestion(i)">
+                        
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                      
+                      </li>
+                      <li class="icon2" (click)="editRadioQuestion(i)">
+                        
+                          <i class="fa fa-edit" aria-hidden="true"></i>
+                      
+                      </li>
+                    </ul>
+                      <!-- <button type="button" class="btn btn-danger" (click)="removeQuestion(i)">Remove Question</button>
+                      <button type="button" class="btn btn-primary" (click)="questionUp(i)">Up Question</button>
+                      <li (click)="questionUp(i)">
+                        <div class="icon">
+                            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        </div>
+                        <span>up</span>
+                      </li>
+                      <button type="button" class="btn btn-primary" (click)="questionDown(i)">Down Question</button>
+                      <button type="button" class="btn btn-default" (click)="editRadioQuestion(i)">Edit Question</button> -->
+                    </div>
+            </div>
+        </div>
+        <!-- Ending display radio container -->
+         <!-- statr checkbox container display -->
+             
+              
+         <div class="col-xs-10 question" *ngIf='question.type && question.type=="checkbox"'>
+            
+            <div class="question-content col-xs-10">
+              <div class="title">
+                  <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                {{question.question}}
+              </div>
+              <div class="answers col-xs-12">
+                <div class="answers-contaioner" *ngFor='let t of question.answers;let q = index'>
+                    <div class="checkbox checkbox-primary">
+                        <input id="{{question.question}}{{t}}{{q}}{{i}}"  type="checkbox" >
+                        <label  for="{{question.question}}{{t}}{{q}}{{i}}" >
+                          <span class="radio-text">
+                          {{question.answers[q].answer}}</span></label>
+                      </div>
+                   
+                    <!-- <label class="radio-label">
+                    <div class="radio-input"><input name="answer" type="checkbox" class="checkbox-primary">
+                      <span class="radio-text">{{question.answers[q].answer}}</span>
+                    </div>
+                    
+                  </label> -->
+                  </div>
+              </div>
+            </div>
+            <div class="question-control col-xs-2">
+                <div class="controls">
+                    <ul >
+                      <li class="icon2" *ngIf="i>0" (click)="questionUp(i)">
+                        
+                          <i class="fa fa-level-up"  aria-hidden="true"></i>
+                      
+                      </li>
+                      <div *ngIf="  Questions.length-1 > i">
+                       
+                          
+                      <li class="icon2"   (click)="questionDown(i)">
+                        
+                          <i class="fa fa-level-down"  aria-hidden="true"></i>
+                      
+                      </li>
+                          </div>
+                    
+                      <li class="icon2"  (click)="removeQuestion(i)">
+                        
+                          <i class="fa fa-trash" aria-hidden="true"></i>
+                      
+                      </li>
+                      <li class="icon2" (click)="editRadioQuestion(i)">
+                        
+                          <i class="fa fa-edit" aria-hidden="true"></i>
+                      
+                      </li>
+                    </ul>
+                      <!-- <button type="button" class="btn btn-danger" (click)="removeQuestion(i)">Remove Question</button>
+                      <button type="button" class="btn btn-primary" (click)="questionUp(i)">Up Question</button>
+                      <li (click)="questionUp(i)">
+                        <div class="icon">
+                            <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                        </div>
+                        <span>up</span>
+                      </li>
+                      <button type="button" class="btn btn-primary" (click)="questionDown(i)">Down Question</button>
+                      <button type="button" class="btn btn-default" (click)="editRadioQuestion(i)">Edit Question</button> -->
+                    </div>
+            </div>
+        </div>
+      </div>
+  <!-- Ending display checkbox container -->
+              
+             
+              <!-- <div class="question-container">
+                  <div class="col-xs-2 qnum">
+                      Question Number
+                    </div>
+                    <div class="col-xs-10">
+                      <div class="question col-xs-12">
+                        <div class="title col-xs-12">
+                          Quetion title
+                        </div>
+                        <div class="body col-xs-12">
+                          <div class="row">
+
+                            <div class="answers col-xs-10">
+                              this is the answers
+                            </div>
+                            <div class="controls col-xs-2">
+                              this is the contorls
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div> -->
+            </div>
+         </div>
+         
+       </div>
+       
+     </div>
+     
+   </div>
+   
+ </div>
+ 
+ <app-radio></app-radio>
+ <app-checkbox></app-checkbox>
+ <app-textarea></app-textarea>
+ <app-dateb-base></app-dateb-base>

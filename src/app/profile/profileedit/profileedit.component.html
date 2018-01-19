@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="edit">
+    <div class="change-data">
+        <form>
+          <div class="header">
+            <h3>change user data</h3>
+          </div>
+            <div class="form__group">
+              <input type="text" name="firstname" id="firstname" class="form__input" [ngModel]="user.firstname" autocomplete="off" placeholder="firstname" required>
+              <label for="firstname" class="form__label">firstname</label>
+            </div>
+            <div class="form__group">
+              <input type="text" name="lastname" id="lastname" class="form__input"autocomplete="off" [ngModel]="user.lastname" placeholder="last name" required>
+              <label for="lastname" class="form__label">lastname</label>
+            </div>
+            <div class="form-group">
+              <input type="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' name="email" id="email" class="form__input"autocomplete="off" [ngModel]="user.email" placeholder="email" required>
+              <label for="email"  class="form__label">email</label>
+            </div>
+            <h6 class="danger">leave it for not changing</h6>
+            <h5 class="danger"> some of input is missing or invalid</h5>
+            <button class="btn btn-primary">submit</button>
+          </form>
+    </div>
+    <hr>
+   <div class="change-password">
+      <form>
+          <div class="header">
+              <h3>change user password</h3>
+            </div>
+          <div class="form-group">
+            <label for="oldpassword">Old Password</label>
+            <input class="form-control" type="password" name="oldpassword" id="oldpassword" placeholder="Please Enter your password"autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="newpassword">New Password</label>
+            <input class="form-control" type="password" name="newpassword" id="newpassword" placeholder="new Password"autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="passwordConfirm">Repeate Password</label>
+            <input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="repeate new password"autocomplete="off">
+          </div>
+        </form>
+   </div>
+  </div>
+</div>

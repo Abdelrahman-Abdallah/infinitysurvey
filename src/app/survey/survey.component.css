@@ -1,0 +1,213 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(122, 143, 201, 0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /* -webkit-box-shadow: inset 0 0 20px rgba(226, 210, 210, 0.8);  */
+    -webkit-box-shadow: inset 0 0 20px rgba(2, 101, 250,0.8);
+}
+.question-container .question-number {
+    position: relative;
+}
+.question-container .question-number .number {
+    /* position: absolute; */
+    /* top: 20%; */
+    margin-top:40px;
+    margin-left: 10px;
+    bottom: 10%;
+    left: 50%;
+    background: linear-gradient(135deg,#344684,#226173),linear-gradient(135deg,#3b3b8c,#226173);
+    width: 60px;
+    height: 60px;
+    color: #FFF;
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.question-container .question-number .number:before {
+    content: "";
+    position: absolute;
+    left: 96%;
+    top: 21px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-left: 14px solid #226173;
+    border-bottom: 9px solid transparent;
+}
+
+.radio-input
+{
+    margin: 3px;
+}
+.radio-text
+{
+   display: block;
+}
+.answers
+{
+    padding: .5rem 1rem;
+    
+    /* margin-bottom: 10px; */
+    
+}
+.answer{
+    /* padding-bottom: 20px; */
+    
+    
+    
+}
+.answers-container{
+    /* background-color: red; */
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.next-btn{
+    margin-left: 30%;
+    margin-top: 150px;
+    width: 100px;
+    height: 45px;
+}
+.radio-text
+{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.displaynone {
+    display: none !important;
+}
+.survey > div {
+    float: left;
+}
+.survey .sidenav{
+    background-color: #35475e;
+    display: inline-block;
+    height: 100vh;
+   width:18%;
+   color:#fff;
+    transform: all .15s ease-in-out;
+}
+
+.survey .sidenav ul,.qestTypeHeader {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family:cursive;
+}
+.survey .sidenav ul li ,.qestTypeHeader{
+    width:100%;
+    height: 50px;
+    padding: 15px 16px;
+    border-bottom:1px solid #3c506a;
+    position: relative;
+    text-align: left
+
+}
+.survey .sidenav ul li:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+.survey .sidenav ul li span {
+    text-transform: capitalize;
+    margin-left: 3px;
+}
+.survey .sidenav ul li > div {
+    float: left;
+}
+.survey .sidenav ul li .icon {
+    width:20%;
+    text-align: right;
+    padding-right: 10px;
+}
+.survey .sidenav ul li .icon > i {
+    display: block;
+    font-size: 20px;
+    color: #06c5f3;
+}
+.controls{
+    float: left;
+    height: 100%;
+    
+}
+.icon2{
+    list-style: none;
+    float: left;
+    margin: 12px;
+    font-size: 21px;
+}
+.icon2:hover{
+color: blue;
+transform: scale(1.3);
+
+}
+.textCloseButt
+{
+    margin-left: 91%;
+    margin-top: -4%;
+}
+
+.survey .survey-content {
+    border:1px solid #dddddd;
+    width: 82%;
+    height: 640px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.survey .survey-content .question-container {
+    display: flex;
+    margin: 1rem 0;
+    padding: 0.5rem .7rem;
+}
+.survey .survey-content .question-container .question {
+    padding: 0px;
+    border-radius: 10px;
+    height: 100%;
+    
+}
+.survey .survey-content .question-container .question .title {
+    padding:.5rem .5rem .5rem 1rem;
+    background: linear-gradient(135deg,#aeb9c5,#a0d5e4);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.survey .survey-content .question-container .question .question-content {
+    padding: 0;
+    border: 1px solid #DDD;
+    height: 100%;
+    z-index: 0;
+}
+.survey .survey-content .question-container .question .title h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+/* radio code */
+  .qestTypeHeader{
+      font-size: 16px;
+  }
+  .noQuestions{
+      width: 90%;
+      /* height: 30%; */
+      border: 5px #d3d8d8 solid;
+      padding: 30px;
+      color: #ccd6d6;
+      font-size: 35px;
+      text-align: center;
+      margin: 20% auto;
+      /* font-weight: 800; */
+      font-family: sans-serif
+  }
+  

@@ -1,0 +1,107 @@
+<div class="backdrop" *ngIf='display'></div>
+<div class="area" *ngIf='display'>
+  <div class="content">
+    <div class="form">
+
+        <form [formGroup]="RadioForm" (ngSubmit)=submit() class="inputField" style="position:relative">
+          <div class="row">
+            <span class="icon2 btn10" (click)="close()">
+              <i class="fa fa-close"  aria-hidden="true"></i>
+             </span>
+            <span class="question-header">
+                        Single Choice Question:
+            </span> 
+                
+          <div class="form-group col-xs-12 inputField" >
+              <div class="inputField">
+                    <input type="text" class="form-control questionInputField" formControlName='quesitons' autocomplete="off" id="inputFieldLabel" placeholder='Insert Ur Question' >
+                    <label for="inputFieldLabel" class="inputFieldLabel">Question</label>
+                    
+                </div>
+              </div>
+            </div>
+            
+            <div class="row" formArrayName='answers' *ngFor="let answer of RadioForm.get('answers').controls; let i = index">
+                <div class="form-group col-xs-10">
+              
+                    <div>
+                      
+                        <div  [formGroupName]='i'>
+                          
+                          <div>
+                            <!-- <span class="questionInputField"> -->
+                                 
+                                 <input type="text" class="form-control questionInputField" autocomplete="off" id="inputFieldLabel" formControlName='answer' placeholder="Insert answer Here">
+                                 <label for="inputFieldLabel" class="inputFieldLabel">answer</label>
+                                 <!-- </span> -->
+                                 
+                          </div>
+                          
+                                 
+                          
+                        </div>
+                       
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-xs-2 btnsContainer" style="padding:0px;">
+                    
+                    <i  (click)="removeAnswer(i)" *ngIf="i>1"> <span class="btn30 glyphicon glyphicon-remove-circle"></span></i>
+                
+                    <i  (click)="addAnswer()" class="btn10" *ngIf="RadioForm.get('answers').controls.length -1 ==i">
+                      <span class="glyphicon glyphicon-plus-sign btn10"></span></i>
+                </div>
+            </div>
+        
+          
+          <button class ='btn btn20' type="submit"  *ngIf="!buttonsDisplay" [disabled]="!RadioForm.valid">Add Question</button>
+          <button class ='btn btn20' type="button" *ngIf="buttonsDisplay" (click)="confirmEdit()" [disabled]="!RadioForm.valid">Save Edit</button>
+        
+      </form>
+  
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+          <div class="form-group col-xs-12">
+              <div formArrayName='answers' *ngFor="let answer of RadioForm.get('answers').controls; let i = index">
+                  <div [formGroupName]='i'>
+                    
+                    <div class="col-xs-8">
+                           <input type="text" class=form-control formControlName='answer' placeholder='Insert Ur answer'>
+                    </div>
+                    <div class="col-xs-2" *ngIf="RadioForm.get('answers').controls.length > 1">
+                           <button class="btn btn-danger"(click)="removeAnswer(i)" *ngIf="i>1"> <span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                  </div>
+              </div>
+              
+              <button type="button" (click)="addAnswer()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button>
+          </div>
+          <button class ='btn btn-primary'type="submit"  *ngIf="!buttonsDisplay" [disabled]="!RadioForm.valid">Submit</button>
+          <button class ='btn btn-default'type="button" *ngIf="buttonsDisplay" (click)="confirmEdit()" [disabled]="!RadioForm.valid">Confirm Edit</button>
+          </form>
+  
+      
+    </div>
+  </div>
+  
+</div> -->

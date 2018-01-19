@@ -1,0 +1,101 @@
+.user__home {
+   position: relative;
+   height: 100%;
+   width: 100%;
+}
+.user__home .app-loader {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.user__home .app-loader .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+.user__home .empty-survey {
+    width: 90%;
+    border:1px solid #000;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.user__home .empty-survey .empty__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: aqua;
+    width: 65%;
+    height: 75%;
+}
+.user__home .empty-survey .empty__content .bottom #svg4{
+    animation: dashed 4s infinite ;
+  
+}
+
+.surveycontaier{
+    padding: 5px;
+}
+.surveycontaier .survey {
+    border:1px solid rgb(197, 186, 186);
+    height: 250px;
+    box-shadow: 1px 1px #000;
+}
+ .surveycontaier .survey .title {
+    height: 20%;
+}
+.surveycontaier .survey .title a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #337ab7;
+    color: #FFF;
+}
+
+.surveycontaier .survey .info {
+    height: 60%;
+}
+.surveycontaier .survey .controls {
+    height: 20%;
+}
+.surveycontaier .survey .controls > div {
+    width: 32.333%;
+    display: inline-block;
+    height: 100%;
+}
+.surveycontaier .survey .controls {
+    background-color: #DDD;
+}
+.surveycontaier .survey .controls i {
+    text-align: center;
+display: block;
+font-size: 30px;
+color: #337ab7;
+padding: 10px 0;
+}
+.survey
+
+@keyframes dashed {
+    
+    /* 0% {
+        stroke-dasharray: 305;
+        stroke-dashoffset: 0;
+    }
+    
+    100% {
+        stroke-dasharray: 485px;
+        stroke-dashoffset: 998px;
+    } */
+    0% {
+        stroke-dasharray: 305;
+        stroke-dashoffset: 147;
+    }
+    
+    100% {
+        stroke-dasharray: 485px;
+        stroke-dashoffset: 998px;
+    }
+}

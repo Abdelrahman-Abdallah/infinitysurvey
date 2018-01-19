@@ -1,0 +1,40 @@
+.field {
+    padding: .5rem;
+    margin: 10px 0;
+    border: 1px solid #12cfda;
+}
+.field .icon {
+    font-size: 1.6rem;
+}
+.field .icon i {
+    width: 2.25rem;
+    color: #12cfda;
+}
+.field .inputs > div {
+    margin: .3rem 0;
+}
+.field .inputs .old .title {
+    overflow: hidden;
+}
+.field .inputs button.edit {
+    height: 3.4rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    outline: none;
+    background: linear-gradient(41deg,#5d72b9,#16b6ff);
+    color: #f9f9f9;
+    font-weight: 600;
+    transition: all .2s ease-in-out;
+}
+.field .inputs button i {
+    margin-left: .5rem;
+}
+.field .inputs button:hover {
+    background: linear-gradient(41deg,#bcd0e4,#95d0ea);;
+    color: #333;
+}
+.field .inputs .new  input[type="text"]{
+    height: 100%;
+}

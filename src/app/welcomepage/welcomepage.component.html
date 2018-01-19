@@ -1,0 +1,23 @@
+<!-- <div class="welcome">
+  <h4 class="quote">Welcome to our website we will back soon</h4>
+  <a routerLink = '/login'>login</a>
+  <a routerLink ='/signup'>signup</a>
+  
+</div> -->
+<div class="header">
+  <div class="header-text">
+   <div>
+      <h1 class="primary-heading">
+          <span class='primary-heading-main'>infinity survey</span>
+          <span class="primary-heading-sub">
+            a place for all surveys
+          </span>
+        </h1>
+   </div>
+    <div *ngIf=" this.Auth.isAuthenticated() == false">
+      <a routerLink="/signup" class='btn-signup'>signup now</a>
+      <a routerLink="/login" class='btn-signup login'>login</a>
+    </div>
+    <a routerLink="/login" class='btn-signup login' *ngIf=" this.Auth.isAuthenticated()">My Profile</a>
+  </div>
+</div>

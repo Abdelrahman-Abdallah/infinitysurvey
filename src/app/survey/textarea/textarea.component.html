@@ -1,0 +1,50 @@
+<div class="backdrop" *ngIf='display'></div>
+<!-- <div class="text-area" *ngIf='display'>
+  <div class="content">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <label for="text"> Question : </label><input type="text">
+    <button (click)='close()'>close</button>
+  </div>
+</div> -->
+<div class="area" *ngIf='display'>
+  <div class="content">
+    <div class="form">
+
+      <form [formGroup]="textareaForm" (ngSubmit)='submit()'>
+          <span class="icon2 btn10" (click)="close()">
+              <i class="fa fa-close"  aria-hidden="true"></i>
+             </span>
+            <span class="question-header">
+                        Essay Question:
+            </span> 
+                
+          <!-- <button class='btn btn-primary textCloseButt' (click)='close()'>close</button> -->
+        <div class="form-group">
+          
+  
+          
+          <input formControlName="question" autocomplete="off" id="inputFieldLabel" placeholder="Insert Your Question Here" class='form-control questionInputField' />
+          <label for="inputFieldLabel" class="inputFieldLabel">Question</label>
+  
+          
+        </div>
+        <textarea name="textarea" cols="100" rows="8" class="areaText"></textarea>
+
+        <button class ='btn btn20' type="submit"  *ngIf="!buttonsDisplay" [disabled]="!textareaForm.valid">Add Question</button>
+        <button class ='btn btn20' type="button" *ngIf="buttonsDisplay" (click)="confirmEdit()" [disabled]="!textareaForm.valid">Save Edit</button>
+      <!--    
+        <button class ='btn btn-success'type="submit"  *ngIf="!buttonsDisplay" [disabled]="!textareaForm.valid">Add Question</button>
+        <button class ='btn btn-success btn10' type="button" *ngIf="buttonsDisplay" (click)="confirmEdit()" [disabled]="!textareaForm.valid">Save Edit</button> 
+      -->
+      </form>
+  
+      
+    </div>
+  </div>
+  
+</div>

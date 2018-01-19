@@ -1,0 +1,88 @@
+.content {
+    /* background-color: #fbfbfb; */
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+}
+/* .content:hover {
+    overflow-x: hidden;
+    overflow-y: scroll;
+} */
+.router {
+    overflow: hidden;
+}
+.question-container {
+    display: flex;
+    margin: 1rem 0;
+    padding: 0.5rem .7rem;
+}
+.question-container .question-number {
+    position: relative;
+}
+.question-container .question-number .number {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    background: linear-gradient(135deg,#344684,#226173),linear-gradient(135deg,#3b3b8c,#226173);
+    width: 60px;
+    height: 60px;
+    color: #FFF;
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.question-container .question-number .number:before {
+    content: "";
+    position: absolute;
+    left: 96%;
+    top: 21px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-left: 14px solid #226173;
+    border-bottom: 9px solid transparent;
+}
+
+.question-container .question-body .question .title {
+    padding:.5rem .5rem .5rem 1rem;
+    background: linear-gradient(135deg,#aeb9c5,#a0d5e4);
+    font-size: 1.7rem;
+    font-weight: 600;
+
+}
+.question-container .question-body .question {
+    background-color: #FFF;
+    position: relative;
+}
+
+.question-container .question-body .question .title i {
+    width: 20px;
+}
+.question-container .question-body .question .answers {
+    padding: 0.5rem 1rem;;
+    border:1px solid #DDD;
+    
+}
+.question-container .question-body .question .answers svg {
+    width:100%;
+    height: 100%;
+    background-color: red;
+}
+.question-container .question-body .question .answers .answer {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.question-container .question-body .question .answers .answer label {
+    display: block;
+}
+.question-container .question-body .question .answers .answer textarea {
+    width: 85%;
+    margin: 1rem auto;
+    text-align: center;
+    padding: .1rem;  
+    display: block;
+    overflow-x: hidden;
+    
+}

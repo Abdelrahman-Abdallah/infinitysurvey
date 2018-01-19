@@ -1,0 +1,38 @@
+<div class="row content">
+    <div class="col-xs-12" *ngFor="let question of surveys.questions;let count = index">
+      <div class="question-container">
+        <div class="question-number col-xs-1">
+          <div class="number">
+            Q.{{count+1}}
+          </div>
+        </div>
+        <div class="question-body col-xs-11 col-md-9">
+            <div class="question" *ngIf="question.type == 'radio' || question.type == 'checkbox'">
+                <div class="title">
+                  <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                  {{question.question}}
+                </div>
+                <div class="answers">
+                    <app-barchar [data]="question.answers" [title]='question.question'></app-barchar>
+                  <!-- <div class="answer radio radio-info" *ngFor="let answer of ">
+                    <input type="radio"  id="{{answer._id}}" name={{question._id}}><label for="{{answer._id}}">{{answer.answer}}</label>
+                  </div> -->
+                </div>
+            </div>
+            <div class="question" *ngIf="question.type == 'textarea'">
+              <div class="title">
+                <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                {{question.question}}
+              </div>
+              <div class="answers">
+                <div class="answer">
+                  <label for="{{question.id}}">Answer</label>
+                  <textarea name="answer" id="{{question._id}}" cols="30" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+        
+    </div>
+  </div>
