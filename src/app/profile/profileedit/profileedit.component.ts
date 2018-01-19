@@ -11,6 +11,7 @@ export class ProfileeditComponent implements OnInit {
   constructor(private UserService: ProfileService) { }
 
   ngOnInit() {
+    this.user =  this.UserService.userData;
     if (this.user === '') {
       console.log('getting user data');
     this.UserService.getUserData().subscribe((res) => {

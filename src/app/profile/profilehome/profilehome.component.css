@@ -37,6 +37,7 @@
 
 .surveycontaier{
     padding: 5px;
+    height: 92%;
 }
 .surveycontaier .survey {
     border:1px solid rgb(197, 186, 186);
@@ -76,7 +77,64 @@ font-size: 30px;
 color: #337ab7;
 padding: 10px 0;
 }
-.survey
+
+.user__header{
+    height: 6%;
+    box-shadow: 0px 1px 1px 0px #3333334a;
+    margin: auto;
+}
+ .user__header .add__survey {
+    display: inline-block;
+    height: 100%;
+    float: right;
+   }
+    .user__header label {
+    color: #716565;
+    display: inline-block;
+    margin-left: 4px;
+    text-transform: uppercase;
+   }
+    .user__header input[type="text"]{
+    width: 55%;
+    margin: 3px 4px;
+    height: 80%;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    color: #716565;
+    font-size: 15px;
+    padding-left: 10px;
+   }
+    .user__header .add__survey a {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #03A9F4;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+    transition: all .15s ease-in-out;
+   }
+    .user__header .add__survey a:after{
+    content: ">>";
+    visibility: hidden;
+    position: absolute;
+    right: -10px;
+    font-size: inherit;
+   }
+    .user__header .add__survey a:hover {
+    background-color: #1888bb;
+    padding: 10px 20px;
+   }
+    .user__header .add__survey a:hover:after{
+     right: 2px;
+     visibility: visible;
+   }
+  
 
 @keyframes dashed {
     

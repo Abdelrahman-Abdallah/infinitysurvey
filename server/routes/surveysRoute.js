@@ -56,7 +56,8 @@ Route.get('/guest/:id',function(req,res){
              console.log('the array is empty');
              return Promise.reject('the user have no survey created yet');
          }
-         res.status(200).send(doc);
+         var new_data = _.pick(doc,['title','questions','restricted','user_id','id']);
+         res.status(200).send(new_data);
      }).catch(err=>{
          console.log(err);
          res.status(400).send(err);

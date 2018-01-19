@@ -1,4 +1,12 @@
 <div class="user__home">
+
+    <div class="user__header" *ngIf='Surveys.length > 1'>
+        <label for="search">search</label>
+        <input type="text" name="search" class="form__input" id="search" placeholder="Enter Survey Title">
+        <div class="add__survey">
+          <a routerLink='/addsurvey'><i class="fa fa-plus" aria-hidden="true"></i> add survey</a>
+         </div>
+      </div>
     <div class='app-loader' *ngIf="loading">
       <app-spinloader></app-spinloader>
     </div>
@@ -33,7 +41,8 @@
           </div>
         </div>
       </div>
-      <div class="surveys">
+      <div class="surveys" *ngIf='Surveys.length > 1'>
+         
         <!-- this is the surveys
         <pre>
           {{Surveys|json}}

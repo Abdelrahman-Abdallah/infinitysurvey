@@ -14,6 +14,28 @@
      /* background-color:#35475e; */
     background:linear-gradient(135deg,#344684,#226173),linear-gradient(135deg,#3b3b8c,#226173);
 }
+.survey .survey-nav .profile {
+    height: 8%;
+    border-bottom: 1px solid #226173;
+}
+.survey .survey-nav .profile a {
+    display: block;
+    text-align: center;
+    padding: 11px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #FFF;
+    height: 100%;
+    text-decoration: none;
+    
+}
+.survey .survey-nav .profile i {
+    color: #1c98d0;
+    width: 20px;
+    font-size: 23px;
+    display: inline-block;
+    margin-right: 8px;
+}
 .survey .survey-nav .survey-title {
     height: 10%;
     padding: .1rem;

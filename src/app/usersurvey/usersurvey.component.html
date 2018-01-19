@@ -3,8 +3,8 @@
 </div>
 <div class="survey">
 <div class="survey-nav">
-    <div class="username">
-        {{userdata.firstname}}{{userdata.lastname}}
+    <div class="profile">
+        <a routerLink="/profile"><i class="fa fa-home" aria-hidden="true"></i>home</a>
     </div>
     <div class="survey-title">
         <div class="title">
@@ -22,7 +22,7 @@
 </div>
 <div class="survey-router">
     <div class="user-header">
-        <a routerLink='/profile'>Home</a>
+          <!--   <h2>{{title}}</h2> -->
     </div>
     <div class="router">
         <router-outlet></router-outlet>
