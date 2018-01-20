@@ -43,6 +43,7 @@
     border:1px solid rgb(197, 186, 186);
     height: 250px;
     box-shadow: 1px 1px #000;
+    margin-bottom: 6px;
 }
  .surveycontaier .survey .title {
     height: 20%;
@@ -75,6 +76,20 @@
 
 .surveycontaier .survey .info {
     height: 60%;
+}
+
+.surveycontaier .survey .info > div {
+    height: 25%;
+    margin-top: 9px;
+}
+.surveycontaier .survey .info > div span:nth-child(1){
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 2px 7px;
+    width: 50%;
+}
+.surveycontaier .survey .info .id span:nth-child(1){
+    width: 14%;
 }
 .surveycontaier .survey .controls {
     height: 20%;
@@ -155,7 +170,58 @@
      right: 2px;
      visibility: visible;
    }
-  
+  .backdrop {
+      z-index: 99;
+  }
+  .showlink{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #FFF;
+    z-index: 99;
+    height: 212px;
+    width: 88%;
+  }
+
+  .showlink .links > div {
+      height: 32%;
+    }
+    .showlink .links .title {
+        margin-top: 10px;
+        height: 32px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 19px;
+        border-bottom: 1px solid #DDD;
+        
+    }
+    .showlink .links .link {
+        margin: 15px 0;
+        height: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        border-bottom: 1px solid #DDD;
+    }
+    .showlink .links .close {
+        height: auto;
+        text-align: center;
+        margin: auto;
+        width: 100%;
+    }
+     #close.closebutton{
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        width: 40%;
+        margin: auto;
+        padding: 16px;
+        font-size: 19px;
+        font-weight: normal;
+        background-color: blue;
+    }
 
 @keyframes dashed {
     

@@ -1,5 +1,22 @@
-<div class="user__home">
+<div class="backdrop" *ngIf="showlink">
+  backdrop
+</div>
 
+<div class="showlink" *ngIf="showlink">
+  <div class="links">
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="link">
+      infinitysurvey.herokuapp.com/view/{{id}}
+    </div>
+    <div class="close" (click)="close()">
+      <div class="closebutton" id="close">close</div>
+    </div>
+  </div>
+</div>
+
+<div class="user__home">
     <div class="user__header" *ngIf='Surveys.length > 1'>
         <label for="search">search</label>
         <input type="text" name="search" class="form__input" id="search" placeholder="Enter Survey Title">
@@ -70,20 +87,31 @@
             </div>
           </div>
         </div> -->
+        
+
+
         <div class="col-xs-12 col-md-3 col-sm-6 surveycontaier" *ngFor="let survey of Surveys">
           <div class="survey">
             <div class="title">
               <a routerLink="/survey/{{survey._id}}"><i _ngcontent-c8="" aria-hidden="true" class="fa fa-hashtag"></i><h4>{{survey.title}}</h4></a>
             </div>
             <div class="info">
-              
+              <div class="enddate">
+                <span>end date :</span> <span [innerText]="getdate(survey.expiredate)"></span>
+              </div>
+              <div class="restricted">
+                <span>state :</span> <span *ngIf="survey.restricted === false">public</span><span  *ngIf="survey.restricted === true">private</span>
+              </div>
+              <div class="id">
+                <span>id :</span> <span [innerText]="survey._id"></span>
+              </div>
             </div>
             <div class="controls">
               
               <div class="result">
                 <a routerLink="/survey/{{survey._id}}"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
               </div>
-              <div class="share">
+              <div class="share" (click)=getlink(survey._id,survey.title)>
                 <i class="fa fa-share" aria-hidden="true"></i>
 
               </div>

@@ -14,7 +14,7 @@ Route.get('/:id',auth,function(req,res){
             if(!survey) {
                 return Promise.reject('no survey found');
             }
-            var result = _.pick(survey,['title','questions','restricted','user_id','_id']);
+            var result = _.pick(survey,['title','questions','restricted','user_id','_id','expiredate']);
             res.status(200).send(result);
         }).catch((e)=>{
             res.status(404).send(e);
@@ -32,7 +32,7 @@ Route.get('/',auth,function(req,res){
         console.log('user survyes are',doc);
         var surveys = [];
         for(var item =0; item < doc.length;item++){
-            var result = _.pick(doc[item],['title','questions','restricted','user_id','_id']);
+            var result = _.pick(doc[item],['title','questions','restricted','user_id','_id','expiredate']);
             surveys.push(result);
         }
         

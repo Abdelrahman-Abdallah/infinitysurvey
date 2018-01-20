@@ -9,6 +9,9 @@ import { ProfileService } from '../../profile.service';
 export class ProfilehomeComponent implements OnInit {
   Surveys: any = [];
   loading = true;
+  title = '';
+  id = '';
+  showlink = false;
   constructor(private UserService: ProfileService) { }
 
   ngOnInit() {
@@ -21,6 +24,25 @@ export class ProfilehomeComponent implements OnInit {
       console.log(this.Surveys);
     }, (err) => {});
 
+  }
+
+
+  getlink(id, title) {
+    console.log(id , title);
+    this.title = title;
+    this.id = id;
+    this.showlink = true;
+  }
+  close(){
+    this.id = '';
+    this.title = '';
+    this.showlink = false;
+  }
+  getdate(date) {
+    let n = Number.parseInt(date);
+    let y = new Date(n).toDateString();
+    console.log(y);
+    return y;
   }
 
 }

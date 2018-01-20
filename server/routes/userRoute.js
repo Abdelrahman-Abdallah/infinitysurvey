@@ -67,10 +67,10 @@ Route.post('/login',function(req,res){
     var body = _.pick(req.body,['email','password']);
     
     User.findByCredintal(body.email,body.password).then((user)=>{
-        if(user.tokens.length > 5){
+        /* if(user.tokens.length > 5){
             user.tokens = [];
             user.save();
-        }
+        } */
        return user.generateAuthToken().then((token)=>{
         user.token = token;
         res.header('x-auth',token).send(user);        
