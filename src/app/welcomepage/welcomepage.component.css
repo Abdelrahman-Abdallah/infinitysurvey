@@ -81,6 +81,44 @@ h4.quote{
 }
 
 
-.card  {
+.info {
+    min-height: 600px;  
+    margin-top: -100px;
+    padding-top: 200px;
+    background-color: rgb(255, 255, 255);
+}
+#infoheading {
+    font-size: 30px;
+    text-transform: uppercase;
     text-align: center;
+    margin-bottom: 40px;
+}
+
+.card  {
+    padding: 10px;
+    text-align: center;
+    height: 250px;
+    border:1px solid #DDD;
+    padding: 3px;
+    margin-bottom: 10px;
+   
+}
+.card .icon {
+    height: 50%;
+    color: rgba(69, 117, 226, 0.8);
+}
+.card .icon i {
+    font-size: 90px;
+}
+.card .title {
+    height: 25%;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.card .content {
+    height: 25%;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 300;
+
 }

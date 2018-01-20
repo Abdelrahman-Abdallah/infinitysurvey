@@ -22,17 +22,41 @@
     position: relative;
 }
 .user__home .empty-survey .empty__content {
+    padding: 7px;
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    background-color: aqua;
-    width: 65%;
-    height: 75%;
+    background-color: #f5f7f9;
+    width: 91%;
+    height: 40%;
+    text-align: center;
 }
 .user__home .empty-survey .empty__content .bottom #svg4{
     animation: dashed 4s infinite ;
   
+}
+.user__home .empty-survey .empty__content .bottom a {
+    display: block;
+    width: 100%;
+    height:153px;
+    position: relative;
+    background-color: #64B5F6;
+
+    border:3px solid #FFF;
+}
+.user__home .empty-survey .empty__content .bottom a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #64B5F6;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #FFF;
+   
 }
 
 .surveycontaier{
