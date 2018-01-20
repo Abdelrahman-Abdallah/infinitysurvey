@@ -52,7 +52,7 @@
     transform: translate(-50%,-50%);
 }
 .survey .survey-nav .links {
-    height: 90%;
+    height: 70%;
 
 }
 .survey .survey-nav .links ul {
@@ -109,4 +109,10 @@
     background-color: #f7f7f7;
     overflow-y:auto;
     overflow-x:hidden;
+}
+.area {
+    margin: 1px 0;
+    background-color: #e2e1e1;
+    padding: 4px 1px 4px 8px;
+
 }

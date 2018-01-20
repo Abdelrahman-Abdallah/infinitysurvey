@@ -26,8 +26,9 @@
               </div>
               <div class="answers">
                 <div class="answer">
-                  <label for="{{question.id}}">Answer</label>
-                  <textarea name="answer" id="{{question._id}}" cols="30" rows="5"></textarea>
+                    <div class="area" *ngFor="let answer of question.value">
+                      {{answer}}
+                    </div>
                 </div>
               </div>
             </div>

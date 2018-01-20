@@ -86,3 +86,10 @@
     overflow-x: hidden;
     
 }
+
+.area {
+    margin: 4px 0;
+    background-color: #e2e1e1;
+    padding: 4px 1px 4px 8px;
+
+}

@@ -19,12 +19,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginGuardService } from './login-guard.service';
 import { ErrorComponent } from './error/error.component';
+import { SurveytitleComponent } from './survey/surveytitle/surveytitle.component';
 
 
 const routes: Routes = [
     {path: '', component: WelcomepageComponent },
     {path: 'login', component: LoginComponent, canActivate: [LoginGuardService]},
     {path: 'signup', component: SignupComponent},
+    {path: 'surveytitle', component:SurveytitleComponent},
     {path: 'addsurvey', component: SurveyComponent , canActivate: [AuthGuardService]},
     {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService], children: [
       {path: '' , redirectTo: 'home', pathMatch: 'full'},

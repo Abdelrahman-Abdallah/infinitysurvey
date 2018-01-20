@@ -35,6 +35,7 @@ import { LineloaderComponent } from './loader/lineloader/lineloader.component';
 import { BarcharComponent } from './usersurvey/barchar/barchar.component';
 import { ProfilehomeComponent } from './profile/profilehome/profilehome.component';
 import { ProfileeditComponent } from './profile/profileedit/profileedit.component';
+import { SurveytitleComponent } from './survey/surveytitle/surveytitle.component';
 //import { EmailValidator } from './emailvalidator.directive';
 
 
@@ -65,7 +66,8 @@ import { ProfileeditComponent } from './profile/profileedit/profileedit.componen
     ProfilehomeComponent,
     ProfileeditComponent,
     //EmailValidator,
-    DatebBaseComponent
+    DatebBaseComponent,
+    SurveytitleComponent
   ],
   imports: [
     BrowserModule,
