@@ -1,7 +1,7 @@
 <div class="row">
   <div class="edit">
     <div class="change-data">
-        <form>
+        <form action="#" (ngSubmit)='changeuserdata(f)' #f="ngForm">
           <div class="header">
             <h3>change user data</h3>
           </div>
@@ -19,12 +19,15 @@
             </div>
             <h6 class="danger">leave it for not changing</h6>
             <h5 class="danger"> some of input is missing or invalid</h5>
-            <button class="btn btn-primary">submit</button>
+            <button class="btn btn-primary" type="submit" [disabled]="!f.valid || !f.dirty">submit</button>
+            <div class="loader" *ngIf="dataloading">
+              <app-lineloader></app-lineloader>
+            </div>
           </form>
     </div>
     <hr>
    <div class="change-password">
-      <form>
+      <form action="#" (ngSubmit)='changepassword(m)' #m="ngForm">
           <div class="header">
               <h3>change user password</h3>
             </div>
@@ -40,6 +43,7 @@
             <label for="passwordConfirm">Repeate Password</label>
             <input class="form-control" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="repeate new password"autocomplete="off">
           </div>
+          <button class="btn btn-primary" type="submit">submit</button>
         </form>
    </div>
   </div>

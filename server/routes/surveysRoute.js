@@ -131,7 +131,14 @@ Route.get('/latest',auth,function(req,res){
 res.send('/lasted');
 });
 Route.post('/',auth,function(req,res){
-    var body = _.pick(req.body,['title','questions','database']);
+    var body = _.pick(req.body,['title','questions','database','expiredate']);
+    console.log(body.database.length);
+    if(body.database.length > 0 ){
+        body.restricted = true;
+    }
+    else {
+        body.restricted = false;
+    }
     //body.date = new Date().toString();
     console.log(body);
     body.user_id = req.user_id;

@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../profile.service';
 
@@ -8,6 +9,7 @@ import { ProfileService } from '../../profile.service';
 })
 export class ProfileeditComponent implements OnInit {
   user: any= '';
+  dataloading = false;
   constructor(private UserService: ProfileService) { }
 
   ngOnInit() {
@@ -22,6 +24,25 @@ export class ProfileeditComponent implements OnInit {
     });
 
   }
+}
+
+changeuserdata(form: NgForm) {
+  const data = {
+    firstname: form.value.firstname,
+    lastname: form.value.lastname,
+    email: form.value.email,
+  };
+  console.log(data);
+  console.log(form);
+
+  this.UserService.updateUserData(data).subscribe((res) => {
+    console.log(res);
+    this.UserService.refreshUserData();
+  });
+}
+
+changepassword(form: NgForm){
+
 }
 
 }

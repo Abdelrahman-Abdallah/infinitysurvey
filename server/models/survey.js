@@ -39,7 +39,7 @@ const SurveySchema = new Schema({
         trim:true,
         required:true
     },
-    date :{
+    expiredate :{
         type: String,
     },
     restricted: {
@@ -50,16 +50,7 @@ const SurveySchema = new Schema({
         type : String,
         required:true  
     },
-    database :[{
-        firstfield:{
-            type:String,
-            trim:true
-        },
-        secondfield:{
-            trim:true,
-            type:String,
-        }
-    }],
+    database :[],
     questions:[questionSchema]
 });
 

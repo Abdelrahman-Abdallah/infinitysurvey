@@ -116,9 +116,19 @@ Route.delete('/',function(req,res){
     res.send({path:"DELETE"});
 });
 
-Route.put('/',function(req,res){
-    console.log('user path Route');
-    res.send({path:"put"});
+Route.patch('/userdata',auth,function(req,res){
+    
+    console.log('path path');
+    const data = _.pick(req.body,['firstname','lastname','email']);
+    User.findByIdAndUpdate(req.user_id,data).exec().then((doc)=>{
+        console.log('data Updated');
+        console.log(doc);
+        res.send(doc);
+    }).catch((err)=>{
+        console.log(err);
+        res.send(err);
+    })
+    console.log(data);
 });
 
 
